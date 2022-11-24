@@ -34,13 +34,18 @@ const mensagensDeErro = {
         patternMismatch: 'A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos.'
     },
     dataNascimento: {
+        valueMissing: 'O campo cpf não pode estar vazio.',
+        customError: 'O CPF digitado não é válido.'
+    },
+    cpf: {
         valueMissing: 'O campo de data de nascimento não pode estar vazio.',
         customError: 'Você deve ser maior que 18 anos para se cadastrar.'
     }
 }
 
 const validadores = {
-    dataNascimento: input => validaDataNascimento(input)
+    dataNascimento: input => validaDataNascimento(input),
+    cpf: input => validaCPF(input)
 }
 
 function mostraMensagemDeErro(tipoDeInput, input) {
@@ -70,4 +75,39 @@ function maiorQue18(data) {
     const dataMais18 = new Date(data.getUTCFullYear() + 18, data.getUTCMonth(), data.getUTCDate())
 
     return dataMais18 <= dataAtual
+}
+
+function validaCPF(input){
+    const cpfFormatado = input.value.replace(/\D/g, ' ')
+    let mensagem = ' '
+
+    if(!      checaCPFRepetido(cpfFormatado)){
+        mensagem = 'O CPF digitado não é válido'
+    }
+
+    input.setCustomValidity(mensagem)
+}
+
+function checaCPFRepetido(cpf){
+    const valoresRepetidos = [
+        '000000000',
+        '111111111',
+        '222222222',
+        '333333333',
+        '444444444',
+        '555555555',
+        '666666666',
+        '777777777',
+        '888888888',
+        '999999999']
+
+    let cpfValido = true
+
+    valoresRepetidos.forEach(valor =>{
+        if(valor === cpf){
+            cpfValido = false
+        }
+    })
+
+    return cpfValido
 }
