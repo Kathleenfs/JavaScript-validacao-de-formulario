@@ -19,7 +19,7 @@ e aplicar uma máscara monetária em campos de preço</p>
 
 </ul>
 
- Instalar e usar o plugin Liveserver ou utilizar browser-sync: ação de
+ Instalar e usar o plugin Liveserver ou utilizar browser-sync:
 
 ```
 npm install -g browse-sync
