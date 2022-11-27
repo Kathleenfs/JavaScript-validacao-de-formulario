@@ -1,29 +1,30 @@
 
  
  <div align = "center">
-  <img width="600" height= 300alt="crud" src="">
+  <img width="600" height= 300alt="crud" src="https://user-images.githubusercontent.com/90014122/204164472-8d111072-8182-4bc0-97c2-ac0a28de2e13.png">
   <br>
-  Criação de um CRUD utilizando o método fetch e os verbos HTTP
+  Validação de formulários utilizando as ferramentas do próprio HTML5.
 </div>
 
 <h1>Objetivo</h1>
-<p>Criar um CRUD utilizando a linguagem de programação JavaScript</p>
+<p>Criar validações customizadas utilizando técnicas atuais com JavaScript, preencher campos de endereço automaticamente com requisições à API da ViaCEP
+e aplicar uma máscara monetária em campos de preço</p>
 
 <h1>Descrição</h1>
 <ul>
-<li>Foi realizado a criação do CRUD de Cliente e cosumindo os dados de uma API foi possível exibir no front end.</li>
-<li>O JSON -SERVER foi utilizado para simular um servidor e consumir dados</li>
- <li>Um código assíncrono, então foi utilizado async e await. Depois foi utilizado try catch para lidar com erros.</li>
+<li>Foi realizado validações no próprio HTML utilizando os atributos required e type .</li>
+<li>Utilizado regras de regex dentro do atributo pattern para validar o campo de senha.</li>
+ <li>Foi criado funções para validações customizadas do formulário e data attributes para trabalhar com JavaScript.</li>
+ <li>Depois foi feita a validação do cpf com números repetidos e por fim foi adicionado máscara monetária para o campo de preço</li>
 
 </ul>
 
- Para rodar o json server:  
-
-```js simular um servidor
-json-server --watch db.json
+ Instalar e usar o plugin Liveserver ou utilizar browser-sync: ação de
 
 ```
-Rodar: browser-sync start --server --file . --host --port 5000 --startPath telas/lista_cliente.html
+npm install -g browse-sync
+```
+Rodar: browser-sync start -s -f . -directory
 
 <h3>Tecnologias utilizadas</h3>
 
